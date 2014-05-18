@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise', github: 'plataformatec/devise'
+
+gem 'friendly_id', '~> 5.0.3'
