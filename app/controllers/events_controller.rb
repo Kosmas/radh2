@@ -63,6 +63,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def all_tags=(names)
+    self.tags = names.split(",").map do |t|
+      Tag.where(name: t.strip).first_or_create!
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -71,7 +77,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :start_date, :end_date, :location, :agenda, :address, :organiser_id)
+      params.require(:event).permit(:title, :start_date, :end_date, :location, :agenda, :address, :organiser_id, :all_tags)
     end
 
     def event_owner!
