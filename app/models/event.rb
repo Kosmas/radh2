@@ -1,7 +1,6 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
-  acts_as_taggable
 
   belongs_to :organisers, class_name: "User"
   has_many :taggings
@@ -9,5 +8,11 @@ class Event < ActiveRecord::Base
 
   def all_tags
     tags.map(&:name).join(", ")
+  end
+
+  def all_tags=(names)
+    self.tags = names.split(",").map do |n|
+      Tag.where(name: n.strip).first_or_create!
+    end
   end
 end
