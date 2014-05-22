@@ -32,7 +32,8 @@
 
 <p>
   <strong>Organiser:</strong>
-  <%= @event.organiser_id %>
+  <%= image_tag avatar_url(@event_owner) %>
+  <%= @event_owner.email %>
 </p>
 
 <p>
