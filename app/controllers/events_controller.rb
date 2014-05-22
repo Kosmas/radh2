@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :event_owner!, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!
+  respond_to :html, :json
 
   # GET /events
   # GET /events.json
@@ -72,6 +73,12 @@ class EventsController < ApplicationController
     self.tags = names.split(",").map do |t|
       Tag.where(name: t.strip).first_or_create!
     end
+  end
+
+  def join
+    @attendance = Attendance.join_event(current_user.id, params[:event_id], 'request_sent')
+    'Request Sent' if @attendance.save
+    respond_with @attendance
   end
 
   private
