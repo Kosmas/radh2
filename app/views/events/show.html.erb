@@ -41,6 +41,30 @@
   <%=raw @event.tags.map(&:name).map { |t| t }.join(', ') %>
 </p>
 
+<% if user_signed_in? && @event.organiser_id == current_user.id %>
+  <p>
+    <strong>Join Requests</strong>
+    <% if @pending_requests.present? %>
+      <% @pending_requests.each do |p| %>
+        <%= image_tag avatar_url(p.user) %>
+        <%= p.user.email %>
+        <%= link_to 'Accept', event_accept_request_path(event_id: @event.id, attendance_id: p.id), class: 'btn btn-success btn-small' %>
+        <%= link_to 'Reject', event_reject_request_path(event_id: @event.id, attendance_id: p.id), class: 'btn btn-danger btn-small' %>
+      <% end %>
+    <% else %>
+      <p>No Pending Requests for this event</p>
+    <% end %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Attendees</strong>
+  <% @attendees.each do |a| %>
+    <%= image_tag avatar_url(a.user) %>
+    <%= a.user_email %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 <%= link_to 'Join', event_join_path(event_id: @event.id), class: "btan btn-success btn-small" %>

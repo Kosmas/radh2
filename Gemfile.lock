@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/geekq/workflow.git
+  revision: ba758ec619807293ab7e3c4e16964e52efd1bf85
+  specs:
+    workflow (1.2.0)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 2f6edfd0c57078a9d518fcd85276e92bc61c3ceb
   specs:
@@ -142,3 +148,4 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  workflow!
