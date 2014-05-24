@@ -61,7 +61,7 @@
   <strong>Attendees</strong>
   <% @attendees.each do |a| %>
     <%= image_tag avatar_url(a.user) %>
-    <%= a.user_email %>
+    <%= a.user.email %>
   <% end %>
 </p>
 

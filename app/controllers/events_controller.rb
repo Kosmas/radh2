@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :accept_request, :reject_request]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :event_owner!, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!
   respond_to :html, :json
@@ -18,7 +18,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event_owner = @event.event_owner(@event.organiser_id)
-    @attendees = Event.show_accepted_attendees(@event.id)
+    @pending_requests = Attendance.pending.where(event_id: @event.id)
+    @attendees = Attendance.accepted.where(event_id: @event.id)
   end
 
   # GET /events/new
@@ -83,6 +84,7 @@ class EventsController < ApplicationController
   end
 
   def accept_request
+    @event = Event.find(params[:event_id])
     @attendance = Attendance.find_by(id: params[:attendance_id]) rescue nil
     @attendance.accept!
     'Applicant Accepted' if @attendance.save
@@ -90,6 +92,7 @@ class EventsController < ApplicationController
   end
 
   def reject_request
+    @event = Event.find(params[:event_id])
     @attendance = Attendance.where(params[:attendance_id]) rescue nil
     @attendance.reject!
     'Applicant Rejected' if @attendance.save

@@ -3,7 +3,7 @@ class Attendance < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
 
-#  scope :pending, ~> { where(state: 'request_sent') }
+  scope :pending, -> { where(state: 'request_sent') }
   scope :accepted, -> { where(state: 'accepted') }
 
   include Workflow
