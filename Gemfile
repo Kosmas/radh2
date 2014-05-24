@@ -43,3 +43,5 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'friendly_id', '~> 5.0.3'
 
 gem 'workflow', github: 'geekq/workflow'
+
+gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
