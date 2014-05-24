@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
 
   get 'tags/:tag', to: 'events#index', as: :tag
+  get :my_events, to: 'events#my_events', as: 'my_events'
+
+  root 'events#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
