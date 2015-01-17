@@ -69,7 +69,7 @@ GEM
     coffee-script-source (1.8.0)
     erubis (2.7.0)
     execjs (2.2.2)
-    friendly_id (5.0.4)
+    friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
@@ -166,7 +166,7 @@ DEPENDENCIES
   anjlab-bootstrap-rails
   coffee-rails (~> 4.1.0)
   devise!
-  friendly_id (~> 5.0.4)
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.2.6)
   jquery-rails (~> 4.0.3)
   rails (= 4.2.0)
