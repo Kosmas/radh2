@@ -47,4 +47,4 @@ gem 'workflow', github: 'geekq/workflow'
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 
 # Security update for nokogiri
-gem 'nokogiri', '~> 1.6.6.4'
+gem 'nokogiri', '~> 1.6.7'
