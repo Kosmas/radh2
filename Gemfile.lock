@@ -166,7 +166,7 @@ DEPENDENCIES
   devise!
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.4.1)
-  jquery-rails (~> 4.1.0)
+  jquery-rails (~> 4.1.1)
   nokogiri (~> 1.6.7.2)
   rails (= 4.2.6)
   sass-rails (~> 5.0.4)
