@@ -38,7 +38,7 @@ gem 'spring',  '~> 2.0.1',     group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise', '~> 4.3.0'
 
 gem 'friendly_id', '~> 5.2.1'
 
