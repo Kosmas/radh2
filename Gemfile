@@ -40,7 +40,7 @@ gem 'spring',  '~> 2.0.2',     group: :development
 
 gem 'devise', '~> 4.3.0'
 
-gem 'friendly_id', '~> 5.2.1'
+gem 'friendly_id', '~> 5.2.2'
 
 gem 'workflow', github: 'geekq/workflow'
 
