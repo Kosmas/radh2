@@ -38,7 +38,7 @@ gem 'spring',  '~> 2.0.2',     group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise', '~> 4.4.1'
+gem 'devise', '~> 4.4.2'
 
 gem 'friendly_id', '~> 5.2.3'
 
