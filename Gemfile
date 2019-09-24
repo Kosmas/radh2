@@ -38,7 +38,7 @@ gem 'spring',  '~> 2.0.2',     group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise', '~> 4.4.3'
+gem 'devise', '~> 4.7.1'
 
 gem 'friendly_id', '~> 5.2.4'
 
@@ -47,4 +47,4 @@ gem 'workflow', github: 'geekq/workflow'
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 
 # Security update for nokogiri
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.10.4'
